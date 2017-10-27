@@ -15,6 +15,7 @@ maven-build:
   artifacts:
     paths:
       - target/coherence-helloworld*.jar
+      - config.yml
 
 #build-master:
 #  image: docker:git
