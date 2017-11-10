@@ -1,0 +1,6 @@
+version: '2'
+
+services:
+    coherence:
+        restart: always
+        image: caffeinatedexpert/docker-coherence:latest

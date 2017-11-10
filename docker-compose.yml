@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+    coherence-master:
+        extends:
+            file: docker-common.yml
+            service: coherence
+        ports:
+            - 9000:9000
+        volumes:
+            - ./scripts/test-connection.sh:/u01/test-connection.sh
+        command: sh /u01/test-connection.sh master
+    coherence-client1:
+        extends:
+            file: docker-common.yml
+            service: coherence
+        ports:
+            - 9001:9000
+        volumes:
+            - ./scripts/test-connection.sh:/u01/test-connection.sh
+        command: sh /u01/test-connection.sh
+    coherence-client2:
+        extends:
+            file: docker-common.yml
+            service: coherence
+        ports:
+            - 9002:9000
+        volumes:
+            - ./scripts/test-connection.sh:/u01/test-connection.sh
+        command: sh /u01/test-connection.sh
